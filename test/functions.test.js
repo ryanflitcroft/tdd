@@ -5,6 +5,7 @@ import {
     divideThenMultiply,
     returnAsAnArray,
     returnAsAString,
+    makeLuckyGreeting,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -83,4 +84,16 @@ test('returnAsAString should take in 3 numbers and return a string those numbers
     expect.equal(actual, expected, 'this test should return the numbers 5, 4, 1 passed as arguments to the function and return the string "541"');
     expect.equal(actual2, expected2, 'this test should return the numbers 5.05, 405, 0.11 passed as arguments to the function and return the string "5.054040.11"');
     expect.equal('string', typeof expected, 'this test should return true for typeof expected to be equal to string');
+});
+
+test('makeLuckyGreeting should return a string concatenated with the value of two numbers passed as arguments', (expect) => {
+    const expected = 'Hello! Your lucky number for the day is 33.';
+    const actual = makeLuckyGreeting(3, 3);
+
+    const expected2 = 'Hello! Your lucky number for the day is 18.';
+    const actual2 = makeLuckyGreeting(1, 8);
+
+    expect.equal(expected, actual, 'this function should return a string concatenated with two numbers 3, 3');
+    expect.equal(expected2, actual2, 'this function should return a string concatenated with two numbers 1, 8');
+    expect.equal(typeof expected, 'string', 'this test should return true that the typeof expected is equal to string');
 });
