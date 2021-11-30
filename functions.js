@@ -98,7 +98,7 @@ Output:
 */
 
 export function returnAsAString(firstNumber, secondNumber, thirdNumber) {
-    return true;
+    return firstNumber.toString() + secondNumber.toString() + thirdNumber.toString();
 }
 
 // This function should take in two numbers and return a greeting announcing that the sum of those numbers is today's lucky number
