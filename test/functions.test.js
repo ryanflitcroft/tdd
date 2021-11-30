@@ -6,6 +6,7 @@ import {
     returnAsAnArray,
     returnAsAString,
     makeLuckyGreeting,
+    getSecondItem,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -96,4 +97,21 @@ test('makeLuckyGreeting should return a string concatenated with the value of tw
     expect.equal(expected, actual, 'this function should return a string concatenated with two numbers 3, 3');
     expect.equal(expected2, actual2, 'this function should return a string concatenated with two numbers 1, 8');
     expect.equal(typeof expected, 'string', 'this test should return true that the typeof expected is equal to string');
+});
+
+test('getSecondItem should take in an array and return the value of the array item in the second index', (expect) => {
+    const expected = 'cat';
+    const actual = getSecondItem(['dog', 'cat', 'goldfish']);
+
+    const expected1 = 7;
+    const actual1 = getSecondItem([9, 7, 1]);
+
+    const expected2 = 'hello';
+    const actual2 = getSecondItem([true, 'hello', 88]);
+
+    expect.equal(actual, expected, 'this function should return the second item in the array passed which is the string "cat" at index 1');
+
+    expect.equal(actual1, expected1, 'this function should return the second item in the array passed which is the number 7 at index 1');
+
+    expect.equal(actual2, expected2, 'this function should return the second item in the array passed which is the string "hello" at index 1');
 });
