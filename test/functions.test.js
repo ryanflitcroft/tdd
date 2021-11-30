@@ -7,6 +7,7 @@ import {
     returnAsAString,
     makeLuckyGreeting,
     getSecondItem,
+    getLastItem
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -114,4 +115,19 @@ test('getSecondItem should take in an array and return the value of the array it
     expect.equal(actual1, expected1, 'this function should return the second item in the array passed which is the number 7 at index 1');
 
     expect.equal(actual2, expected2, 'this function should return the second item in the array passed which is the string "hello" at index 1');
+});
+
+test('getLastItem should take in an array and return the value of the array item in the last index', (expect) => {
+    const expected = 'hello';
+    const actual = getLastItem(['hi', 'hey', 'hello']);
+
+    const expected1 = 0;
+    const actual1 = getLastItem([1, 3, 5, 7, 9, 0]);
+
+    const expected2 = 'hi';
+    const actual2 = getLastItem(['1, 3, 5, 7, 9, 0', 'hi']);
+
+    expect.equal(expected, actual, 'this function should return the last item in the array, which is at the index of array.length - 1 and has a value of the string "hello"');
+    expect.equal(expected1, actual1, 'this function should return the last item in the array, which is at the index of array.length - 1 and has a value of the number 0');
+    expect.equal(expected2, actual2, 'this function should return the last item in the array, which is at the index of array.length - 1 and has a value of the string "hi"');
 });
