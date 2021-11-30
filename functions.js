@@ -32,7 +32,7 @@ export function multiplyBySeven(num) {
     return num * 7;
 }
 
-// This function should take in a number and multiply it by seven then cut the result in half
+// This function should take in a number and multiply it by twelve then cut the result in half
 
 /* 
 Input:
@@ -46,7 +46,7 @@ Output:
 */
 
 export function multiplyBy12ThenHalve(num) {
-    return true;
+    return num * 12 / 2;
 }
 
 
