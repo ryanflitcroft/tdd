@@ -7,7 +7,8 @@ import {
     returnAsAString,
     makeLuckyGreeting,
     getSecondItem,
-    getLastItem
+    getLastItem,
+    getRandomNumber
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -131,3 +132,16 @@ test('getLastItem should take in an array and return the value of the array item
     expect.equal(expected1, actual1, 'this function should return the last item in the array, which is at the index of array.length - 1 and has a value of the number 0');
     expect.equal(expected2, actual2, 'this function should return the last item in the array, which is at the index of array.length - 1 and has a value of the string "hi"');
 });
+
+test('getRandomNumber should return a random number between 0 and 5', (expect) => {
+    const actual = getRandomNumber();
+    const expected = getRandomNumber(); 
+
+    expect.equal(typeof actual, 'number', 'this function should return a data type of number');
+    expect.equal(true, actual < 5 || actual >= 0, 'this function should return a data type of number');
+    expect.equal(true, actual < 5 || actual >= 0, 'this function should return a data type of number');
+    expect.equal(false, actual === expected, 'this test should return false, because actual should not (or at least very unlikely in this case) be equal to expected if each generates a random number');
+});
+
+// expected should be typeof number
+// expected should be a number >= 0 && number < 5
