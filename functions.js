@@ -80,7 +80,9 @@ Output:
 */
 
 export function returnAsAnArray(firstNumber, secondNumber, thirdNumber) {
-    return true;
+    let arr = [];
+    arr.push(firstNumber, secondNumber, thirdNumber);
+    return arr;
 }
 
 // This function should take in three numbers and return those numbers mushed together as a string

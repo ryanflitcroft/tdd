@@ -3,6 +3,7 @@ import {
     multiplyBySeven,
     multiplyBy12ThenHalve,
     divideThenMultiply,
+    returnAsAnArray,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -56,4 +57,17 @@ test('divideThenMultiply should take in 3 numbers and return a value which is eq
     expect.equal(actual, expected, 'this function should return the value of the equation 6 / 3 * 10, which should be equal to 20');
     expect.equal(actual2, expected2, 'this function should return the value of the equation 7.5 / 3 * 6, which should be equal to 15');
     expect.equal(actual3, expected3, 'this function should return the value of the equation 2.3 / 0.5 * 18, which should be equal to 82.8');
+});
+
+test('returnAsAnArray should take in 3 numbers and return the value of an array of those numbers', (expect) => {
+
+    const expected = [3, 5, 7];
+    const actual = returnAsAnArray(3, 5, 7);
+
+    const expected2 = [3.3, 5.55, 0.077];
+    const actual2 = returnAsAnArray(3.3, 5.55, 0.077);
+
+    expect.deepEqual(actual, expected, 'this function should take in three numbers, 3, 5, and 7, and return an array value of [3, 5, 7]');
+    expect.deepEqual(actual2, expected2), 'this function should take in three numbers, 3.3, 5.55, and 0.077, and return an array value of [3.3, 5.55, 0.077]';
+    expect.equal(true, 3 === expected[0] && 5 === expected[1] && 7 === expected[2], 'this function should return an array where the index 0 is equal to 3, the index 1 is equal to 5, and the index 2 is equal to 7');
 });
